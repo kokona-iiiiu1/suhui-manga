@@ -42,6 +42,26 @@
     revealEls.forEach(function (el) { el.classList.add("visible"); });
   }
 
+  // ---- 主题切换（深海蓝 ⇄ 晴空蓝） ----
+  var themeToggle = document.getElementById("themeToggle");
+  var themeLabel = document.getElementById("themeLabel");
+  function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    try { localStorage.setItem("suhui-theme", theme); } catch (e) {}
+    var dot = themeToggle.querySelector(".theme-toggle-dot");
+    dot.classList.toggle("deep", theme === "deepsea");
+    dot.classList.toggle("sky", theme === "sky");
+    themeLabel.textContent = theme === "deepsea" ? "深海" : "晴空";
+  }
+  if (themeToggle) {
+    var initial = document.documentElement.getAttribute("data-theme") || "deepsea";
+    themeToggle.addEventListener("click", function () {
+      var cur = document.documentElement.getAttribute("data-theme") || "deepsea";
+      applyTheme(cur === "deepsea" ? "sky" : "deepsea");
+    });
+    applyTheme(initial);
+  }
+
   // ---- Waline 评论初始化 ----
   // serverURL: 部署在 Vercel 的 Waline 服务端（Neon Postgres 存储）
   // login: enable → 匿名/登录并存：不登录可匿名评论，登录后可管理（删除）自己的评论

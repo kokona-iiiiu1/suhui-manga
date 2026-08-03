@@ -1,7 +1,8 @@
 /* ============================================================
    《溯洄》设计令牌 tokens.css
    来源：Open Design — editorial-monocle (Editorial/Monocle 杂志画册风)
-   定制：深蓝海洋系 × 悲剧美学
+   定制：深蓝海洋系 × 悲剧美学（默认）
+   主题：data-theme="deepsea"（默认深海蓝）/ data-theme="sky"（晴空蓝）
    结构：
      --tone-*   : 明暗两套色板（浅色正文区 / 深色 Hero 与阅读器）
      --font-*   : 衬线字体栈
@@ -9,7 +10,8 @@
      --motion-* : 动效时长
    ============================================================ */
 
-:root {
+:root,
+:root[data-theme="deepsea"] {
   /* ---- 字体 ---- */
   --font-display: "Iowan Old Style", "Charter", "Songti SC", "SimSun",
                   Georgia, "Times New Roman", serif;
@@ -32,6 +34,16 @@
   --dark-muted:     #8fa3bd;   /* 雾蓝 */
   --dark-border:    #24344d;   /* 深蓝 hairline */
   --dark-accent:    #4fd1c5;   /* 珍珠青（暗底强调） */
+
+  /* ---- 主题派生（main.css 硬编码色变量化） ---- */
+  --header-bg:        rgba(11, 18, 32, 0.88);  /* 顶栏背景 */
+  --reader-grad:      #16233c;                 /* 中栏渐变起始 */
+  --nav-zone-color:   rgba(232, 238, 247, 0);  /* 翻页箭头（隐藏态） */
+  --nav-zone-hover-bg:  rgba(79, 209, 197, 0.07);  /* 翻页 hover 底 */
+  --nav-zone-hover-fg:  rgba(232, 238, 247, 0.55); /* 翻页 hover 箭头 */
+  --shadow-cover:     rgba(0, 0, 0, 0.65);     /* 封面投影 */
+  --shadow-stage:     rgba(0, 0, 0, 0.6);      /* 阅读器投影 */
+  --shadow-page:      rgba(0, 0, 0, 0.35);     /* 页面投影 */
 
   /* ---- 间距节奏（4px 基准） ---- */
   --space-1: 4px;
@@ -65,4 +77,36 @@
   --sidebar-left-w: 280px;
   --sidebar-right-w: 300px;
   --header-h: 56px;
+}
+
+/* ============================================================
+   主题二 · 晴空蓝（浅色梦幻，中栏亮蓝渐变）
+   ============================================================ */
+:root[data-theme="sky"] {
+  /* ---- 浅色板（左右侧栏 / 正文区 · 晴空蓝雾感） ---- */
+  --tone-bg:        #f4f8fd;   /* 淡蓝白纸面 */
+  --tone-surface:   #eaf1fa;   /* 淡蓝雾表面 */
+  --tone-fg:        #1f2d45;   /* 深蓝正文 */
+  --tone-muted:     #5d7395;   /* 雾蓝灰辅助文字 */
+  --tone-border:    #d5e2f2;   /* 淡蓝 hairline */
+  --tone-accent:    #3b82c4;   /* 天蓝（浅底强调） */
+  --tone-accent-2:  #6b8fd4;   /* 雾蓝点缀 */
+
+  /* ---- 渐变板（中间 Hero / 阅读器 · 浅蓝调） ---- */
+  --dark-bg:        #cfe0f5;   /* 淡天蓝（渐变起点） */
+  --dark-surface:   #e8f0fb;   /* 柔雾白蓝卡片 */
+  --dark-fg:        #1c2a42;   /* 深蓝文字 */
+  --dark-muted:     #5a7194;   /* 雾蓝 */
+  --dark-border:    #c3d6ee;   /* 淡蓝 hairline */
+  --dark-accent:    #2f7fc4;   /* 亮蓝（渐变区强调） */
+
+  /* ---- 主题派生（晴空蓝版本） ---- */
+  --header-bg:        rgba(234, 241, 250, 0.85);  /* 顶栏背景 */
+  --reader-grad:      #dbe9f9;                 /* 中栏渐变起始 */
+  --nav-zone-color:   rgba(28, 42, 66, 0);     /* 翻页箭头（隐藏态） */
+  --nav-zone-hover-bg:  rgba(47, 127, 196, 0.10);  /* 翻页 hover 底 */
+  --nav-zone-hover-fg:  rgba(28, 42, 66, 0.55);    /* 翻页 hover 箭头 */
+  --shadow-cover:     rgba(90, 130, 190, 0.50);    /* 封面投影 */
+  --shadow-stage:     rgba(80, 120, 180, 0.40);    /* 阅读器投影 */
+  --shadow-page:      rgba(80, 120, 180, 0.25);    /* 页面投影 */
 }

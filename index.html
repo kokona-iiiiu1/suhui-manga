@@ -8,6 +8,17 @@
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="vendor/waline.min.css">
+  <script>
+    /* 主题初始化：在渲染前应用已保存的主题，避免闪烁 */
+    (function () {
+      try {
+        var t = localStorage.getItem("suhui-theme");
+        if (t === "sky" || t === "deepsea") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch (e) { /* 隐私模式等场景忽略 */ }
+    })();
+  </script>
 </head>
 <body>
 
@@ -17,6 +28,10 @@
     <nav class="site-nav" id="siteNav">
       <a href="#reader" data-anchor="reader">在线阅读</a>
       <a href="#commentsSection" data-anchor="commentsSection">评论区</a>
+      <button class="theme-toggle" id="themeToggle" type="button" title="切换主题" aria-label="切换主题">
+        <span class="theme-toggle-dot deep" aria-hidden="true"></span>
+        <span class="theme-toggle-label" id="themeLabel">深海</span>
+      </button>
     </nav>
   </header>
 

@@ -26,7 +26,7 @@ button { font-family: inherit; cursor: pointer; }
   height: var(--header-h);
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 var(--space-6);
-  background: rgba(11, 18, 32, 0.88);
+  background: var(--header-bg);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--dark-border);
 }
@@ -42,6 +42,26 @@ button { font-family: inherit; cursor: pointer; }
   letter-spacing: 0.06em; transition: color var(--motion-fast) var(--ease-out);
 }
 .site-nav a:hover, .site-nav a.active { color: var(--dark-accent); }
+.theme-toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px;
+  background: var(--dark-surface);
+  border: 1px solid var(--dark-border);
+  border-radius: 999px;
+  color: var(--dark-fg);
+  font-size: var(--fs-tiny);
+  letter-spacing: 0.06em;
+  transition: color var(--motion-fast) var(--ease-out),
+              border-color var(--motion-fast) var(--ease-out),
+              background var(--motion-fast) var(--ease-out);
+}
+.theme-toggle:hover { border-color: var(--dark-accent); color: var(--dark-accent); }
+.theme-toggle-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  flex: 0 0 auto;
+}
+.theme-toggle-dot.deep { background: #0b1220; border: 1px solid #4fd1c5; }
+.theme-toggle-dot.sky { background: #cfe0f5; border: 1px solid #3b82c4; }
 
 /* ---- 三栏主体 ---- */
 .site-main {
@@ -95,7 +115,7 @@ button { font-family: inherit; cursor: pointer; }
 .reader-col {
   min-width: 0;
   background:
-    radial-gradient(1200px 600px at 50% -10%, #16233c 0%, var(--dark-bg) 60%);
+    radial-gradient(1200px 600px at 50% -10%, var(--reader-grad) 0%, var(--dark-bg) 60%);
   display: flex; flex-direction: column;
   min-height: calc(100vh - var(--header-h));
 }
@@ -135,7 +155,7 @@ button { font-family: inherit; cursor: pointer; }
   margin: var(--space-6) auto 0;
   width: min(340px, 70%);
   border: 1px solid var(--dark-border);
-  box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.65);
+  box-shadow: 0 24px 60px -18px var(--shadow-cover);
 }
 
 /* ---- 阅读器主体 ---- */
@@ -158,7 +178,7 @@ button { font-family: inherit; cursor: pointer; }
   width: 100%; max-width: 860px;
   background: var(--dark-surface);
   border: 1px solid var(--dark-border);
-  box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 12px 40px -12px var(--shadow-stage);
   padding: var(--space-4);           /* 左右留白：漫画页不贴边 */
 }
 .reader-stage img.page-img {
@@ -166,19 +186,19 @@ button { font-family: inherit; cursor: pointer; }
   width: auto; height: auto;
   max-width: 100%;
   margin: 0 auto;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);  /* 页与底之间投影，增强层次 */
+  box-shadow: 0 2px 10px var(--shadow-page);  /* 页与底之间投影，增强层次 */
 }
 .reader-stage .nav-zone {
   position: absolute; top: 0; bottom: 0; width: 46%;
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  color: rgba(232, 238, 247, 0);
+  color: var(--nav-zone-color);
   font-size: 2rem;
   transition: color var(--motion-fast) var(--ease-out), background var(--motion-fast) var(--ease-out);
 }
 .reader-stage .nav-zone.prev { left: 0; }
 .reader-stage .nav-zone.next { right: 0; }
-.reader-stage .nav-zone:hover { background: rgba(79, 209, 197, 0.07); color: rgba(232, 238, 247, 0.55); }
+.reader-stage .nav-zone:hover { background: var(--nav-zone-hover-bg); color: var(--nav-zone-hover-fg); }
 .reader-stage .nav-zone.disabled { pointer-events: none; }
 
 /* ---- 缩略图条 ---- */
