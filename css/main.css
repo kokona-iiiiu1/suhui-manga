@@ -262,35 +262,7 @@ button { font-family: inherit; cursor: pointer; }
 .cn-contact a { color: var(--dark-accent); border-bottom: 1px dotted var(--dark-accent); }
 .cn-contact .cn-tip { font-size: var(--fs-tiny); color: var(--dark-muted); opacity: 0.7; }
 
-/* ============ 人物设定区块（中栏底部） ============ */
-.characters {
-  width: 100%; max-width: 860px;
-  padding: var(--space-8) 0;
-  border-top: 1px solid var(--dark-border);
-  color: var(--dark-fg);
-}
-.characters h2 {
-  font-size: var(--fs-h2);
-  margin-bottom: var(--space-6);
-  color: var(--dark-fg);
-}
-.characters h2 em { color: var(--dark-accent); font-style: normal; }
-.char-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-5); }
-.char-card {
-  background: var(--dark-surface);
-  border: 1px solid var(--dark-border);
-  padding: var(--space-4);
-  transition: transform var(--motion-base) var(--ease-out), border-color var(--motion-base);
-}
-.char-card:hover { transform: translateY(-3px); border-color: var(--dark-accent); }
-.char-card img {
-  width: 100%; height: 260px; object-fit: cover;
-  border: 1px solid var(--dark-border);
-  margin-bottom: var(--space-4);
-}
-.char-card h3 { font-size: var(--fs-h3); color: var(--dark-fg); margin-bottom: var(--space-1); }
-.char-card .cc-role { font-size: var(--fs-tiny); color: var(--dark-accent); letter-spacing: 0.12em; margin-bottom: var(--space-3); }
-.char-card .cc-desc { font-size: var(--fs-small); color: var(--dark-muted); margin: 0; }
+/* ============ 人物设定区块（暂移除，样式保留供恢复时启用） ============ */
 
 /* ============ 页脚 ============ */
 .site-footer {
