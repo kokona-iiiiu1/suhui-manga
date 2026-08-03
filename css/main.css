@@ -148,10 +148,13 @@ button { font-family: inherit; cursor: pointer; }
   background: var(--dark-surface);
   border: 1px solid var(--dark-border);
   box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.6);
+  padding: var(--space-4);           /* 左右留白：漫画页不贴边 */
 }
 .reader-stage img.page-img {
-  width: 100%; height: auto;
+  width: auto; height: auto;
+  max-width: 100%;
   margin: 0 auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);  /* 页与底之间投影，增强层次 */
 }
 .reader-stage .nav-zone {
   position: absolute; top: 0; bottom: 0; width: 46%;
