@@ -59,6 +59,7 @@ button { font-family: inherit; cursor: pointer; }
   overflow-y: auto;
   max-height: calc(100vh - var(--header-h));
   position: sticky; top: var(--header-h);
+  align-self: start;               /* 关键：防止 grid 拉伸导致 sticky 失效 */
 }
 .sidebar-left .work-title {
   font-size: var(--fs-h2);
@@ -70,36 +71,23 @@ button { font-family: inherit; cursor: pointer; }
   letter-spacing: 0.08em;
 }
 .blurb { margin-bottom: var(--space-6); }
-.blurb .dropcap::first-letter {
+.blurb .tagline {
   font-family: var(--font-display);
-  font-size: 3.2em; float: left; line-height: 0.85;
-  padding-right: 8px; color: var(--tone-accent);
+  font-size: var(--fs-h3);
+  font-style: italic;
+  color: var(--tone-fg);
+  margin: 0 0 var(--space-4) 0;
 }
-.world-card {
-  border: 1px solid var(--tone-border);
-  border-left: 3px solid var(--tone-accent);
-  background: var(--tone-bg);
-  padding: var(--space-4);
-  margin-bottom: var(--space-4);
+.blurb .about-note {
+  margin: 0;
+  font-size: var(--fs-small);
+  color: var(--tone-muted);
+  line-height: var(--leading-body);
 }
-.world-card h4 { font-size: var(--fs-h3); margin-bottom: var(--space-2); }
-.world-card p { margin: 0; font-size: var(--fs-small); color: var(--tone-muted); }
-.char-summary { margin-top: var(--space-5); }
-.char-summary h3 { font-size: var(--fs-h3); margin-bottom: var(--space-4); }
-.char-mini {
-  display: flex; gap: var(--space-3); align-items: center;
-  padding: var(--space-3) 0;
-  border-bottom: 1px solid var(--tone-border);
-}
-.char-mini img {
-  width: 44px; height: 44px; object-fit: cover; border-radius: 50%;
-  border: 1px solid var(--tone-border);
-}
-.char-mini .cm-name { font-family: var(--font-display); font-weight: 600; }
-.char-mini .cm-role { font-size: var(--fs-tiny); color: var(--tone-muted); }
 .team-note {
   margin-top: var(--space-6);
-  font-size: var(--fs-tiny); color: var(--tone-muted);
+  font-size: var(--fs-small);
+  color: var(--tone-muted);
   border-top: 1px solid var(--tone-border); padding-top: var(--space-4);
 }
 
@@ -214,6 +202,7 @@ button { font-family: inherit; cursor: pointer; }
   overflow-y: auto;
   max-height: calc(100vh - var(--header-h));
   position: sticky; top: var(--header-h);
+  align-self: start;               /* 关键：防止 grid 拉伸导致 sticky 失效 */
 }
 .sidebar-right h3 {
   font-size: var(--fs-h3);
@@ -234,6 +223,44 @@ button { font-family: inherit; cursor: pointer; }
   font-size: var(--fs-tiny); margin-top: var(--space-3);
 }
 #comments { margin-top: var(--space-5); }
+
+/* ============ 创作者感言（中栏，漫画下方） ============ */
+.creator-note {
+  width: 100%; max-width: 860px;
+  padding: var(--space-8) 0;
+  border-top: 1px solid var(--dark-border);
+  color: var(--dark-fg);
+}
+.creator-note h2 {
+  font-size: var(--fs-h2);
+  margin-bottom: var(--space-5);
+  color: var(--dark-fg);
+}
+.creator-note h2 em { color: var(--dark-accent); font-style: normal; }
+.creator-note .cn-text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-h3);
+  line-height: 1.9;
+  color: var(--dark-fg);
+  margin: 0 0 var(--space-4) 0;
+  max-width: 720px;
+}
+.cn-contact {
+  margin-top: var(--space-6);
+  padding: var(--space-5);
+  background: var(--dark-surface);
+  border: 1px solid var(--dark-border);
+}
+.cn-contact h3 {
+  font-size: var(--fs-h3);
+  color: var(--dark-accent);
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.1em;
+}
+.cn-contact p { margin: 0 0 var(--space-2) 0; color: var(--dark-muted); font-size: var(--fs-small); }
+.cn-contact a { color: var(--dark-accent); border-bottom: 1px dotted var(--dark-accent); }
+.cn-contact .cn-tip { font-size: var(--fs-tiny); color: var(--dark-muted); opacity: 0.7; }
 
 /* ============ 人物设定区块（中栏底部） ============ */
 .characters {
