@@ -260,7 +260,7 @@ button { font-family: inherit; cursor: pointer; }
   line-height: 1.95;
   color: var(--dark-fg);
   margin: 0 0 var(--space-4) 0;
-  max-width: 760px;
+  /* 跟随 .creator-note 的 900px 内容宽度，正文保持左对齐 */
 }
 .cn-contact {
   margin-top: var(--space-6);
