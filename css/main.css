@@ -227,14 +227,25 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--dark-fg);
 }
 .creator-note h2 em { color: var(--dark-accent); font-style: normal; }
+.cn-block {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--dark-border);
+}
+.cn-block:last-of-type { border-bottom: none; }
+.cn-block h3 {
+  font-size: var(--fs-h3);
+  color: var(--dark-accent);
+  margin-bottom: var(--space-4);
+  letter-spacing: 0.12em;
+}
 .creator-note .cn-text {
   font-family: var(--font-display);
-  font-style: italic;
-  font-size: var(--fs-h3);
-  line-height: 1.9;
+  font-size: 1.02rem;
+  line-height: 1.95;
   color: var(--dark-fg);
   margin: 0 0 var(--space-4) 0;
-  max-width: 720px;
+  max-width: 760px;
 }
 .cn-contact {
   margin-top: var(--space-6);
