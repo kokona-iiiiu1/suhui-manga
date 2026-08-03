@@ -151,6 +151,7 @@ button { font-family: inherit; cursor: pointer; }
   padding: var(--space-4);           /* 左右留白：漫画页不贴边 */
 }
 .reader-stage img.page-img {
+  display: block;            /* 关键：block 元素 margin auto 才能水平居中 */
   width: auto; height: auto;
   max-width: 100%;
   margin: 0 auto;
