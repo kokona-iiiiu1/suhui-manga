@@ -225,6 +225,12 @@ button { font-family: inherit; cursor: pointer; }
   padding-bottom: var(--space-3);
   border-bottom: 1px solid var(--tone-border);
 }
+.comment-note {
+  margin: 0 0 var(--space-4) 0;
+  font-size: var(--fs-tiny);
+  line-height: 1.7;
+  color: var(--tone-muted);
+}
 #comments { margin-top: var(--space-4); }
 #comments .wl-panel { background: transparent; }
 #comments .wl-input-item textarea { min-height: 90px; }
