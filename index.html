@@ -7,6 +7,7 @@
   <meta name="description" content="《溯洄》原创漫画：中世纪海边渔村，人鱼遗孤克洛琳与孤独人鱼莉芮尔的宿命轮回之恋。">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="vendor/waline.min.css">
 </head>
 <body>
 
@@ -85,15 +86,9 @@
       <!-- (区块已移除) -->
     </section>
 
-    <!-- ===== 右栏 · 评论区（预留） ===== -->
+    <!-- ===== 右栏 · 评论区（Waline） ===== -->
     <aside class="sidebar-right" id="commentsSection">
       <h3>评论区</h3>
-      <div class="comments-placeholder">
-        <div class="cp-icon">💬</div>
-        <p>评论区即将上线</p>
-        <p class="cp-note">匿名评论功能正在规划中，敬请期待。</p>
-      </div>
-      <!-- 接入评论服务（如 Waline / Cusdis）时，在下方挂载点初始化脚本 -->
       <div id="comments"></div>
     </aside>
 
@@ -103,6 +98,7 @@
     《溯洄》© 2026 森林 · AyRM · Rubisco — 仅供展示交流 · 未经许可请勿转载
   </footer>
 
+  <script src="vendor/waline.min.js"></script>
   <script src="js/reader.js"></script>
   <script src="js/main.js"></script>
 </body>

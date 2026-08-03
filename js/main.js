@@ -1,5 +1,5 @@
 /* ============================================================
-   main.js — 导航滚动高亮、入场动效、评论挂载点
+   main.js — 导航滚动高亮、入场动效、Waline 评论初始化
    ============================================================ */
 (function () {
   "use strict";
@@ -42,27 +42,27 @@
     revealEls.forEach(function (el) { el.classList.add("visible"); });
   }
 
-  // ============================================================
-  // 评论挂载点（预留）
-  // ------------------------------------------------------------
-  // 接入 Waline（免费、匿名可评）时：
-  //   1) 在 Vercel 部署 Waline 服务端，得到 serverURL
-  //   2) 取消下方注释，替换 serverURL，并 <script> 引入 @waline/client
-  //   3) 删掉 .comments-placeholder 占位块
-  // ============================================================
-  /*
+  // ---- Waline 评论初始化 ----
+  // serverURL: 部署在 Vercel 的 Waline 服务端（Neon Postgres 存储）
+  // login: disable → 完全匿名，无需登录；requiredMeta: [nick] → 只需昵称
   var commentsEl = document.getElementById("comments");
   if (commentsEl && window.Waline) {
-    window.Waline.init({
-      el: "#comments",
-      serverURL: "https://your-waline-server.vercel.app",
-      lang: "zh-CN",
-      pageview: false,
-      dark: "auto",
-      emoji: ["https://unpkg.com/@waline/emojis@1.2.0/weibo"],
-      requiredMeta: ["nick"],   // 只要求昵称，不强制邮箱 → 匿名可评
-      login: "disable"          // 完全匿名，无需登录
-    });
+    try {
+      window.Waline.init({
+        el: "#comments",
+        serverURL: "https://suhui-waline.vercel.app",
+        lang: "zh-CN",
+        pageview: false,
+        dark: "auto",
+        login: "disable",
+        requiredMeta: ["nick"],
+        emoji: false,
+        meta: ["nick", "mail"],
+        search: false,
+        copyright: false,
+      });
+    } catch (e) {
+      console.error("[Waline] 初始化失败:", e);
+    }
   }
-  */
 })();

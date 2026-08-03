@@ -210,19 +210,9 @@ button { font-family: inherit; cursor: pointer; }
   padding-bottom: var(--space-3);
   border-bottom: 1px solid var(--tone-border);
 }
-.comments-placeholder {
-  border: 1px dashed var(--tone-border);
-  background: var(--tone-bg);
-  padding: var(--space-6) var(--space-4);
-  text-align: center;
-  color: var(--tone-muted);
-  font-size: var(--fs-small);
-}
-.comments-placeholder .cp-icon { font-size: 1.6rem; margin-bottom: var(--space-3); }
-.comments-placeholder .cp-note {
-  font-size: var(--fs-tiny); margin-top: var(--space-3);
-}
-#comments { margin-top: var(--space-5); }
+#comments { margin-top: var(--space-4); }
+#comments .wl-panel { background: transparent; }
+#comments .wl-input-item textarea { min-height: 90px; }
 
 /* ============ 创作者感言（中栏，漫画下方） ============ */
 .creator-note {
