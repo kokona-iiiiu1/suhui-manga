@@ -99,6 +99,17 @@ button { font-family: inherit; cursor: pointer; }
   display: flex; flex-direction: column;
   min-height: calc(100vh - var(--header-h));
 }
+/* 中栏内容统一宽度：水平居中 + 左右对称内边距（正文保持左对齐） */
+.reader-col > .reader-hero,
+.reader-col > .reader-wrap,
+.reader-col > .creator-note {
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+}
 .reader-hero {
   padding: var(--space-8) var(--space-6) var(--space-6);
   text-align: center;
