@@ -44,7 +44,8 @@
 
   // ---- Waline 评论初始化 ----
   // serverURL: 部署在 Vercel 的 Waline 服务端（Neon Postgres 存储）
-  // login: disable → 完全匿名，无需登录；requiredMeta: [nick] → 只需昵称
+  // login: enable → 匿名/登录并存：不登录可匿名评论，登录后可管理（删除）自己的评论
+  // requiredMeta: [nick] → 只需昵称
   var commentsEl = document.getElementById("comments");
   if (commentsEl && window.Waline) {
     try {
@@ -54,7 +55,7 @@
         lang: "zh-CN",
         pageview: false,
         dark: "auto",
-        login: "disable",
+        login: "enable",
         requiredMeta: ["nick"],
         emoji: false,
         meta: ["nick", "mail"],
