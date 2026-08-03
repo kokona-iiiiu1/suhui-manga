@@ -1,0 +1,68 @@
+/* ============================================================
+   《溯洄》设计令牌 tokens.css
+   来源：Open Design — editorial-monocle (Editorial/Monocle 杂志画册风)
+   定制：深蓝海洋系 × 悲剧美学
+   结构：
+     --tone-*   : 明暗两套色板（浅色正文区 / 深色 Hero 与阅读器）
+     --font-*   : 衬线字体栈
+     --space-*  : 间距节奏
+     --motion-* : 动效时长
+   ============================================================ */
+
+:root {
+  /* ---- 字体 ---- */
+  --font-display: "Iowan Old Style", "Charter", "Songti SC", "SimSun",
+                  Georgia, "Times New Roman", serif;
+  --font-body:    "Charter", "Georgia", "Songti SC", "SimSun", serif;
+  --font-mono:    ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+
+  /* ---- 浅色板（正文区 / 杂志米白） ---- */
+  --tone-bg:        #f7f5f0;   /* 米白纸面 */
+  --tone-surface:   #ffffff;   /* 卡片 */
+  --tone-fg:        #1a2332;   /* 墨蓝黑正文 */
+  --tone-muted:     #64748b;   /* 雾蓝灰辅助文字 */
+  --tone-border:    #dbe4f0;   /* 浅海蓝 hairline */
+  --tone-accent:    #2b8f86;   /* 贝壳青（浅底上的强调） */
+  --tone-accent-2:  #b45309;   /* 暖琥珀点缀（月相/章节标记） */
+
+  /* ---- 深色板（Hero / 阅读器暗底） ---- */
+  --dark-bg:        #0b1220;   /* 深海黑蓝 */
+  --dark-surface:   #101b2e;   /* 卡片深蓝 */
+  --dark-fg:        #e8eef7;   /* 月白文字 */
+  --dark-muted:     #8fa3bd;   /* 雾蓝 */
+  --dark-border:    #24344d;   /* 深蓝 hairline */
+  --dark-accent:    #4fd1c5;   /* 珍珠青（暗底强调） */
+
+  /* ---- 间距节奏（4px 基准） ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* ---- 排版 ---- */
+  --fs-display: clamp(2.2rem, 5vw, 3.6rem);  /* 作品名 */
+  --fs-h2:      clamp(1.4rem, 2.6vw, 1.9rem); /* 区块标题 */
+  --fs-h3:      1.15rem;                       /* 卡片标题 */
+  --fs-body:    1rem;
+  --fs-small:   0.85rem;
+  --fs-tiny:    0.75rem;
+  --leading-body: 1.8;
+  --leading-display: 1.15;
+  --tracking-display: -0.02em;   /* 大标题收紧字距（monocle 姿态） */
+
+  /* ---- 动效 ---- */
+  --motion-fast: 140ms;
+  --motion-base: 240ms;
+  --motion-slow: 480ms;
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* ---- 布局常量 ---- */
+  --sidebar-left-w: 280px;
+  --sidebar-right-w: 300px;
+  --header-h: 56px;
+}
