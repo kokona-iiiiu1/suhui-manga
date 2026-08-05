@@ -73,7 +73,7 @@
         el: "#comments",
         serverURL: "https://suhui-waline.vercel.app",
         lang: "zh-CN",
-        pageview: false,
+        pageview: true,
         dark: "auto",
         login: "enable",
         requiredMeta: ["nick"],
